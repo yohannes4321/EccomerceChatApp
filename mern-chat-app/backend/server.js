@@ -18,8 +18,12 @@ app.use(express.json());
 
 // Routes
 app.use("/api/user", userRoutes);
-app.use("/api/chat", chatRoutes);
+const chatRoutes = require("./routes/chatRoutes");  // Ensure correct path
+app.use("/api/chat", chatRoutes);  // Connect chat routes to /api/chat
+
 app.use("/api/message", messageRoutes);
+
+
 
 
 
