@@ -17,8 +17,7 @@ connectDB();
 app.use(express.json());
 
 // Routes
-app.use("/api/user", userRoutes);
-const chatRoutes = require("./routes/chatRoutes");  // Ensure correct path
+app.use("/api/user", userRoutes); // Ensure correct path
 app.use("/api/chat", chatRoutes);  // Connect chat routes to /api/chat
 
 app.use("/api/message", messageRoutes);
