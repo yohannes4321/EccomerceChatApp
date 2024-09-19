@@ -43,7 +43,7 @@ const Signup = () => {
       });
       return;
     }
-    console.log(name, email, password, pic);
+    
     try {
       const config = {
         headers: {
@@ -52,6 +52,7 @@ const Signup = () => {
       };
       const { data } = await axios.post(
         "/api/user",
+        
         {
           name,
           email,
@@ -60,7 +61,7 @@ const Signup = () => {
         },
         config
       );
-      console.log(data);
+      
       toast({
         title: "Registration Successful",
         status: "success",
@@ -68,6 +69,7 @@ const Signup = () => {
         isClosable: true,
         position: "bottom",
       });
+      console.log("data",data);
       localStorage.setItem("userInfo", JSON.stringify(data));
       setPicLoading(false);
       history.push("/chats");
